@@ -6,13 +6,13 @@ const cat = document.querySelector('#cat');
 let category = "";
 
 
-getCategory = (c) => {
+getCategory = (evt) => {
 
-    if (c.innerText == "General Knowledge") {
+    if (evt.innerText == "General Knowledge") {
         category = "General Knowledge";
-    } else if (c.innerText == "History") {
+    } else if (evt.innerText == "History") {
         category = "History";
-    } else if (c.innerText == "Sports") {
+    } else if (evt.innerText == "Sports") {
         category = "Sports";
     }
 

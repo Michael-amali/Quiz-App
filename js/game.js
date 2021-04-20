@@ -4,7 +4,6 @@ let questions = [];
 const loader = document.querySelector('#loader');
 const game = document.querySelector('#game');
 
-console.log(category)
 
 
 function App() {
@@ -22,11 +21,9 @@ fetchQuestions = (url) => {
 
     //fetching data using fetch promise method
     fetch(url).then(res => {
-            console.log(res);
             return res.json();
         })
         .then(loadedQuestions => {
-            console.log(loadedQuestions.results);
             questions = loadedQuestions.results.map(loadedQuestion => {
                 const formattedQuestion = {
                     question: loadedQuestion.question
@@ -43,7 +40,7 @@ fetchQuestions = (url) => {
                 });
                 return formattedQuestion;
             });
-            // questions = loadedQuestions;
+            
 
             startGame();
         })
@@ -84,7 +81,6 @@ startGame = () => {
     //Holds value for most recent score
     score = 0;
     availableQuestions = [...questions];
-    //  console.log(availableQuestions);x`
 
     getNewQuestion();
     game.classList.remove('hidden');
@@ -130,7 +126,6 @@ choices.forEach(choice => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
-        // console.log(selectedAnswer == currentQuestion.answer);
         let classToApply = 'incorrect';
 
         if (selectedAnswer == currentQuestion.answer) {
@@ -158,7 +153,5 @@ incrementScore = num => {
 scoreText.innerText = score;
 
 
-// Program starts here
 App();
 
-// Cat section starts here

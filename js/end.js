@@ -1,13 +1,10 @@
  const username = document.querySelector('#username');
  const saveScorebtn = document.querySelector('#saveScoreBtn');
 
- //  get locally stored high score or return an empty array
- //  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-
  const generalHighScores = JSON.parse(localStorage.getItem("generalHighScores")) || [];
  const sportsHighScore = JSON.parse(localStorage.getItem("sportsHighScore")) || [];
  const historyHighScore = JSON.parse(localStorage.getItem("historyHighScore")) || [];
- const MAX_HIGH_SCORES = 5;
+ const MAX_HIGH_SCORES = 10;
 
  const finalScore = document.querySelector('#finalScore');
  const mostRecentScore = localStorage.getItem('mostRecentScore');
@@ -16,15 +13,14 @@
  username.addEventListener('keyup', () => {
      saveScorebtn.disabled = !username.value;
  })
- saveHighScore = e => {
-     e.preventDefault();
+ saveHighScore = evt => {
+     evt.preventDefault();
      const score = {
-         score: Math.floor(Math.random() * 100),
+         score: mostRecentScore,
          name: username.value
      }
 
      const category = localStorage.getItem('Category');
-     console.log(category);
 
 
      if (category == "General Knowledge") {
