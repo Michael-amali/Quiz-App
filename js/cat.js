@@ -1,6 +1,3 @@
-// let category = document.querySelector('#quiz').value;
-
-
 const play = document.querySelector('#home');
 const cat = document.querySelector('#cat');
 let category = "";

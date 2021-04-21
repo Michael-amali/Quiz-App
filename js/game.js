@@ -48,11 +48,7 @@ fetchQuestions = (url) => {
             console.error(err);
         })
 
-
-
-
 }
-
 
 
 
@@ -71,7 +67,7 @@ let questionCounter = 0;
 let availableQuestions = [];
 
 
-//Constants
+//Score and Bonus
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
 
